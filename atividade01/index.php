@@ -1,22 +1,35 @@
 <?php
 
-require_once "Controller/ProdutoController.php";
+require_once "Controller/LivroController.php";
 
-$produtoController = new ProdutoController();
+$livroController = new LivroController();
 $route = $_GET["route"] ?? '';
 
 switch ($route){
-    case 'produto/telaCadastro':
-        $produtoController-> telaCadastro();
+    case 'livro/telaCadastro':
+        $livroController-> telaCadastro();
         break;
 
-    case "usuario/salvar":
-        $produtoController->cadastrar();
+    case "livro/salvar":
+        $livroController->cadastrar();
         break;
     
-    case "usuario/listar":
-        $produtoController->listarProdutos();
+    case "livro/listar":
+        $livroController->listarUsuarios();
         break;
+
+    case "livro/telaEditar":
+        $livroController->telaEditar();
+        break;
+
+    case "livro/atualizar":
+        $livroController->atualizar();
+        break;
+
+        case "livro/excluir":
+         $livroController->excluir();
+         break;
+
 
     default:
         echo "Página não encontrada";
